@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Learning Platform</title>
+  <!--<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto+Mono&family=Pacifico&family=Press+Start+2P&family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Rubik+Glitch&display=swap" rel="stylesheet">
+  <style>
+
+.moirai-one-regular {
+  font-family: "Moirai One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .ai-card:nth-child(1) strong { font-family: 'Orbitron', sans-serif; }
+.ai-card:nth-child(2) strong { font-family: 'Roboto Mono', monospace; }
+.ai-card:nth-child(3) strong { font-family: 'Pacifico', cursive; }
+.ai-card:nth-child(4) strong { font-family: 'Press Start 2P', cursive; }
+.ai-card:nth-child(5) strong { font-family: 'Fira Code', monospace; }
+.ai-card:nth-child(6) strong { font-family: 'Orbitron', sans-serif; }
+.ai-card:nth-child(7) strong { font-family: 'Roboto Mono', monospace; }
+.ai-card:nth-child(8) strong { font-family: 'Pacifico', cursive; }
+.ai-card:nth-child(9) strong { font-family: 'Press Start 2P', cursive; }
+.ai-card:nth-child(10) strong { font-family: 'Fira Code', monospace; }
+.ai-card:nth-child(11) strong { font-family: 'Orbitron', sans-serif; }
+.ai-card:nth-child(12) strong { font-family: 'Roboto Mono', monospace; }
+
+  </style>
+  
+
+  <style>
+
+
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    color: #10b981;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .github-link:hover {
+    color: #3b82f6;
+    transform: scale(1.05);
+  }
+
+  .github-link::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('https://github.githubassets.com/images/icons/emoji/octocat.png');
+    background-size: contain;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .github-link:hover::before {
+    transform: rotate(15deg) scale(1.2);
+    animation: bounce 0.5s infinite alternate;
+  }
+
+  @keyframes bounce {
+    from { transform: rotate(15deg) scale(1.2); }
+    to { transform: rotate(15deg) scale(1.3); }
+  }
+
+  .hearts {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .heart {
+    color: #ff6b6b;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .heart:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .heart:nth-child(3) {
+    animation-delay: 1s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+
+     /* Add this to your existing styles */
+  html {
+    background: linear-gradient(to right, #1f2937, #374151);
+  }
+  
+  body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #1f2937, #374151);
+    overflow-x: hidden;
+  }
+
+  /* This ensures footer stays at bottom if content is short */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+
+
+    .moirai-one-regular {
+  font-family: "Moirai One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h1 {
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #10b981, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  }
+
+  /* For the "Get Started" button */
+  button {
+    font-family: 'Rubik Glitch', cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  /* For the feature card headings */
+  .card h3 {
+    font-family: 'Rubik Glitch', cursive;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #10b981;
+  }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1f2937, #374151);
+      color: white;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 5rem;
+      font-family: 'Moirai One', cursive;
+    }
+    .intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+    .email-input {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem auto;
+    }
+    input[type="email"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #10b981;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #059669;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+    .card {
+      background-color: #1f2937;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #4b5563;
+    }
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+    .ai-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      text-align: center;
+    }
+    .ai-card {
+  background-color: #111827;
+  border: 1px solid #374151;
+  border-radius: 15px;
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ai-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #10b981;
+}
+
+.ai-card a {
+  color: #10b981;
+  text-decoration: none;
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  position: relative;
+}
+.ai-card a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #10b981;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+.ai-card a:hover::after {
+  width: 100%;
+}
+
+
+    .ai-card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .ai-card a {
+      color: #10b981;
+      text-decoration: none;
+      display: block;
+      margin-top: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #9ca3af;
+      font-size: 0.875rem;
+    }
+    .search-bar {
+      text-align: center;
+      margin: 2rem auto;
+    }
+    .search-bar input[type="text"] {
+      padding: 0.5rem;
+      width: 300px;
+      max-width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  .card {
+    background-color: #1f2937;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #4b5563;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #10b981, #3b82f6);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+  }
+
+  .card:hover::before {
+    opacity: 0.1;
+  }
+
+  .card h3 {
+    margin: 0.5rem 0 1rem;
+    font-size: 1.3rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #10b981;
+    transition: width 0.3s ease;
+  }
+
+  .card:hover h3::after {
+    width: 50%;
+  }
+
+  .card p {
+    transition: color 0.3s ease;
+  }
+
+  .card:hover p {
+    color: #e5e7eb;
+  }
+
+    
+  </style>
+</head>
+<body>
+  <h1>Unlock Your Potential with AI</h1>
+  <p class="intro">
+    Join our interactive platform and build your skills in data science, machine learning, and AI technologies.
+  </p>
+  <div class="email-input">
+    <input type="email" placeholder="Enter your email" />
+    <button onclick="alert('Welcome to AI Learning Platform!')">Get Started</button>
+  </div>
+
+  <div class="features">
+    <div class="card">
+      <h3>Personalized Learning Paths</h3>
+      <p>Set your goals and let our AI recommend the best courses tailored to your needs.</p>
+    </div>
+    <div class="card">
+      <h3>Real-world Projects</h3>
+      <p>Apply your knowledge with projects that mimic industry scenarios and build a strong portfolio.</p>
+    </div>
+    <div class="card">
+      <h3>Skill Assessments</h3>
+      <p>Test your skills with interactive quizzes and track your progress through smart analytics.</p>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search your favorite AI tool..." />
+  </div>
+
+  <div class="ai-links">
+    <div class="ai-card">
+      <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT" />
+      <strong>ChatGPT</strong>
+      <a href="https://chat.openai.com/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://gemini.google.com/favicon.ico" alt="Gemini" />
+      <strong>Gemini</strong>
+      <a href="https://gemini.google.com/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://www.perplexity.ai/favicon.ico" alt="Perplexity" />
+      <strong>Perplexity</strong>
+      <a href="https://www.perplexity.ai/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek" />
+      <strong>DeepSeek</strong>
+      <a href="https://www.deepseek.com/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://www.phind.com/favicon.ico" alt="Phind" />
+      <strong>Phind</strong>
+      <a href="https://www.phind.com/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://www.heygen.com/favicon.ico" alt="HeyGen" />
+      <strong>HeyGen</strong>
+      <a href="https://www.heygen.com/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://www.notion.so/images/favicon.ico" alt="Notion AI" />
+      <strong>Notion AI</strong>
+      <a href="https://www.notion.so/product/ai" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://github.com/favicon.ico" alt="GitHub Copilot" />
+      <strong>GitHub Copilot</strong>
+      <a href="https://github.com/features/copilot" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://openart.ai/favicon.ico" alt="OpenArt AI" />
+      <strong>OpenArt AI</strong>
+      <a href="https://openart.ai/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://www.runwayml.com/favicon.ico" alt="Runway" />
+      <strong>Runway</strong>
+      <a href="https://www.runwayml.com/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://firefly.adobe.com/favicon.ico" alt="Adobe Firefly" />
+      <strong>Adobe Firefly</strong>
+      <a href="https://firefly.adobe.com/" target="_blank">Visit</a>
+    </div>
+    <div class="ai-card">
+      <img src="https://claude.ai/favicon.ico" alt="Claude" />
+      <strong>Claude</strong>
+      <a href="https://claude.ai/" target="_blank">Visit</a>
+    </div>
+    
+  </div>
+
+ 
+  <footer>
+    <a href="https://github.com/mahadihassan879" class="github-link" target="_blank">
+      Source: Mahadi
+    </a>
+    <span class="hearts">
+      <span class="heart">♥</span>
+      <span class="heart">♥</span>
+      <span class="heart">♥</span>
+    </span>
+    Built by AI Enthusiasts
+  </footer>
+</body>
+</html>
